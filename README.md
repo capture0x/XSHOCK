@@ -18,6 +18,7 @@ Instagram: [Capture the Root](https://www.instagram.com/capturetheroot/)
 <img src="https://i.imgur.com/lyfeMxJ.png" width="32%"></img>
 <img src="https://i.imgur.com/WREKK5f.png" width="32%"></img>
 <img src="https://i.imgur.com/xuQuwaV.png" width="32%"></img>
+<img src="https://i.imgur.com/S5RHqGP.png" width="32%"></img>
 
 ## 📹 How to use 📹
 [![How to use xShock](https://i.imgur.com/MQdjJ5W.png)](https://www.youtube.com/watch?v=VXP6ZYyBPS4)
