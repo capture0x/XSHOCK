@@ -4,7 +4,7 @@ import sys
 import random
 import loginscreen
 from time import sleep
-import proxy
+import proxy as prx
 
 class Colors:
     r = '\033[31m'
@@ -197,7 +197,7 @@ loginscreen.entry()
 
 
 def Menu():
-    proxy.proxy_lister()
+    prx.proxy_lister()
     print(Colors.m, "\n\n|~~|~~|~~|         WELCOME TO XSHOCK            |~~|~~|~~|  ")
     y = """
 1) CGI VULN SCAN
