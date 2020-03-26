@@ -44,11 +44,3 @@ def proxy_lister():
     return data
 
 
-counter = 0
-for proxies in proxy_lister():
-    proxies = ''.join(proxies)
-    print("{1}Proxy found\t:{3} {2}{0}{3}".format(proxies, bcolors.CBLUE, bcolors.CVIOLET, bcolors.CRED))
-    counter += 1
-
-print("\nTotaly {1}{0}{2} proxies found!".format(counter, bcolors.CBLACK, bcolors.CRED))
-print("{0}Proxies saved to {2} {1}proxy.txt{2}".format(bcolors.CBLUE, bcolors.CVIOLET, bcolors.CRED))
