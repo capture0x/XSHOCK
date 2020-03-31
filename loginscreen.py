@@ -67,17 +67,12 @@ def entry():
         print(colors.CWHITE + c, end='')
         sys.stdout.flush()
         sleep(0.0065)
-    h = "@~~~~~~~~~~                                    ~~~~~~~~~~@\n\n"
-    for c in h:
-        print(colors.CWHITE + c, end='')
-        sys.stdout.flush()
-        sleep(0.0065)
     y = "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n\n"
     for c in y:
         print(colors.CYELLOW + c, end='')
         sys.stdout.flush()
         sleep(0.0065)
-    y = "@@@                WELCOME TO XSHOCK TOOL              @@@\n\n"
+    y = "@@@              WELCOME TO XSHOCK TOOL                @@@\n\n"
     for c in y:
         print(colors.CWHITE + c, end='')
         sys.stdout.flush()
