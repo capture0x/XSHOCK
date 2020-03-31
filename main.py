@@ -116,7 +116,7 @@ def dizinScan():
 def commandIn():
     try:
         print("e.g==>http://target.com/cgi-bin/status")
-        aaa = input(Colors.b + "Vulnerable url enter\t\t:")
+        aaa = input(Colors.b + "Vulnerable url enter:")
         komut = input("Please Command Enter:")
         while True:
             x = """                    
