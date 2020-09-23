@@ -9,7 +9,7 @@
 
  This tool exploits shellshock.
 
-Instagram: [Capture the Root](https://www.instagram.com/tmrswrr/)
+Instagram: [TMRSWRR](https://www.instagram.com/tmrswrr/)
 
 ## 🖼️ Screenshots 🖼️
 
