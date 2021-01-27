@@ -3,7 +3,7 @@
 <img src="https://i.imgur.com/PHIwqe7.png" width="60%"></img>
 
 
-#### Written by Hulya Karabag 
+#### Written by TMRSWRR 
 #### Version 1.0.0
  xShock ShellShock (CVE-2014-6271) 
 
