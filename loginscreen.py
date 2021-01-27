@@ -57,12 +57,12 @@ def entry():
         print(colors.CWHITE + c, end='')
         sys.stdout.flush()
         sleep(0.0065)
-    x = "@~~~~             INSTAGRAM==>TMRSWRR                ~~~~@\n\n"
+    x = "@~~~~                                                ~~~~@\n\n"
     for c in x:
         print(colors.CWHITE + c, end='')
         sys.stdout.flush()
         sleep(0.0065)
-    z = "@~~~~~~          CODED BY HULYA KARABAG            ~~~~~~@\n\n"
+    z = "@~~~~~~          CODED BY    TMRSWRR               ~~~~~~@\n\n"
     for c in z:
         print(colors.CWHITE + c, end='')
         sys.stdout.flush()
